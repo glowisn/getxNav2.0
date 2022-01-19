@@ -17,6 +17,7 @@ abstract class Routes {
   static String LOGIN_THEN(String afterSuccessfulLogin) =>
       '$LOGIN?then=${Uri.encodeQueryComponent(afterSuccessfulLogin)}';
   static String PRODUCT_DETAILS(String productId) => '$PRODUCTS/$productId';
+  static const DETAIL2 = _Paths.PRODUCTS + _Paths.DETAIL2;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const PRODUCT_DETAILS = '/:productId';
   static const LOGIN = '/login';
   static const DASHBOARD = '/dashboard';
+  static const DETAIL2 = '/detail2';
 }

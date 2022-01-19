@@ -23,10 +23,10 @@ class EnsureNotAuthedMiddleware extends GetMiddleware {
   Future<GetNavConfig?> redirectDelegate(GetNavConfig route) async {
     if (AuthService.to.isLoggedInValue) {
       //NEVER navigate to auth screen, when user is already authed
-      return null;
+      // return null;
 
       //OR redirect user to another screen
-      //return GetNavConfig.fromRoute(Routes.PROFILE);
+      return GetNavConfig.fromRoute(Routes.PROFILE);
     }
     return await super.redirectDelegate(route);
   }

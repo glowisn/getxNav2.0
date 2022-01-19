@@ -10,6 +10,8 @@ import '../modules/login/views/login_view.dart';
 import '../modules/product_details/bindings/product_details_binding.dart';
 import '../modules/product_details/views/product_details_view.dart';
 import '../modules/products/bindings/products_binding.dart';
+import '../modules/products/detail2/bindings/detail2_binding.dart';
+import '../modules/products/detail2/views/detail2_view.dart';
 import '../modules/products/views/products_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
@@ -82,6 +84,11 @@ class AppPages {
                     //only enter this route when authed
                     EnsureAuthMiddleware(),
                   ],
+                ),
+                GetPage(
+                  name: _Paths.DETAIL2,
+                  page: () => Detail2View(),
+                  binding: Detail2Binding(),
                 ),
               ],
             ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +21,9 @@ class HomeView extends GetView<HomeController> {
           currentIndex = 1;
         }
         return Scaffold(
+          appBar: AppBar(actions: [
+            IconButton(onPressed: (){}, icon: Icon(Icons.nat))]
+          ,),
           body: GetRouterOutlet(
             initialRoute: Routes.DASHBOARD,
             // anchorRoute: Routes.HOME,

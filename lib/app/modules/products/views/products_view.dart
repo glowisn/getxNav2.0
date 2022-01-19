@@ -14,34 +14,35 @@ class ProductsView extends GetView<ProductsController> {
       ),
       body: Column(
         children: [
-          Hero(
-            tag: 'heroLogo',
-            child: const FlutterLogo(),
-          ),
-          Expanded(
-            child: Obx(
-              () => RefreshIndicator(
-                onRefresh: () async {
-                  controller.products.clear();
-                  controller.loadDemoProductsFromSomeWhere();
-                },
-                child: ListView.builder(
-                  itemCount: controller.products.length,
-                  itemBuilder: (context, index) {
-                    final item = controller.products[index];
-                    return ListTile(
-                      onTap: () {
-                        Get.rootDelegate
-                            .toNamed(Routes.PRODUCT_DETAILS(item.id));
-                      },
-                      title: Text(item.name),
-                      subtitle: Text(item.id),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
+          // Hero(
+          //   tag: 'heroLogo',
+          //   child: const FlutterLogo(),
+          // ),
+          SizedBox(height: 500, child: GetRouterOutlet(initialRoute: Routes.DETAIL2),)
+          // Expanded(
+          //   child: Obx(
+          //     () => RefreshIndicator(
+          //       onRefresh: () async {
+          //         controller.products.clear();
+          //         controller.loadDemoProductsFromSomeWhere();
+          //       },
+          //       child: ListView.builder(
+          //         itemCount: controller.products.length,
+          //         itemBuilder: (context, index) {
+          //           final item = controller.products[index];
+          //           return ListTile(
+          //             onTap: () {
+          //               Get.rootDelegate
+          //                   .toNamed(Routes.PRODUCT_DETAILS(item.id));
+          //             },
+          //             title: Text(item.name),
+          //             subtitle: Text(item.id),
+          //           );
+          //         },
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
